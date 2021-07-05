@@ -1,11 +1,11 @@
-from przedmiot import notatka,wizytowka,kuponRabatowy
+from przedmiot import notatka, wizytowka, kuponRabatowy
+
 
 class organizer:
-
     __wlasciel = ''
     __bazaDanych = []
 
-    def __init__(self,wlasciciel):
+    def __init__(self, wlasciciel):
         self.wlasciel = wlasciciel
 
     def dodajNotatke(self):
@@ -14,7 +14,7 @@ class organizer:
         tresc = input('Treść:')
         id = input('ID ')
 
-        nowaNotatka = notatka (priorytet,tytul,tresc,id)
+        nowaNotatka = notatka(priorytet, tytul, tresc, id)
         self.__bazaDanych.append(nowaNotatka)
 
     def usunNotatke(self):
@@ -23,14 +23,13 @@ class organizer:
             if i.typ == 'notatka':
                 self.__bazaDanych.remove(i)
 
-
     def dodajWizytowke(self):
         priorytet = input('Priorytet:')
         imie = input('Imię:')
         nazwisko = input('Nazwisko:')
         telefon = input('Nr Telefonu')
 
-        nowaWizytowka = wizytowka(priorytet,imie,nazwisko,telefon)
+        nowaWizytowka = wizytowka(priorytet, imie, nazwisko, telefon)
         self.__bazaDanych.append(nowaWizytowka)
 
     def usunWizytowke(self):
@@ -45,18 +44,13 @@ class organizer:
         telefon = input('nr telefonu')
         wartosc = input('podaj wartosc kuponu')
 
-        nowyKupon = kuponRabatowy(priorytet,imie,nazwisko,telefon,wartosc)
+        nowyKupon = kuponRabatowy(priorytet, imie, nazwisko, telefon, wartosc)
         self.__bazaDanych.append(nowyKupon)
 
     def usunKupon(self):
         for i in self.__bazaDanych:
             if i.typ == 'kuponrabatowy':
                 self.__bazaDanych.remove(i)
-
-
-
-
-
 
     def wyswietlNotatke(self):
         print('lista notatek')
@@ -75,10 +69,3 @@ class organizer:
         for i in self.__bazaDanych:
             if i.typ == 'kuponrabatowy':
                 print(i)
-
-
-
-
-
-
-

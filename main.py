@@ -1,6 +1,5 @@
 from organizer import organizer
 
-
 mojorganizer = organizer('Foo')
 while True:
 

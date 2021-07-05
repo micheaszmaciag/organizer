@@ -1,8 +1,9 @@
 from abc import ABC, abstractmethod
 
+
 class przedmiot(ABC):
 
-    def __init__(self,typ,priorytet):
+    def __init__(self, typ, priorytet):
         self.typ = typ
         self.priorytet = priorytet
 
@@ -13,8 +14,8 @@ class przedmiot(ABC):
 
 class notatka(przedmiot):
 
-    def __init__(self,priorytet,tytul,tresc,id):
-        super().__init__('notatka',priorytet)
+    def __init__(self, priorytet, tytul, tresc, id):
+        super().__init__('notatka', priorytet)
         self.tytul = tytul
         self.tresc = tresc
         self.id = id
@@ -26,14 +27,14 @@ class notatka(przedmiot):
         info += self.id + '\n'
         return info
 
+
 class wizytowka(przedmiot):
 
-    def __init__(self,priorytet,imie,nazwisko,telefon):
-        super().__init__('wizytowka',priorytet)
+    def __init__(self, priorytet, imie, nazwisko, telefon):
+        super().__init__('wizytowka', priorytet)
         self.imie = imie
         self.nazwisko = nazwisko
         self.telefon = telefon
-
 
     def __str__(self):
         info = self.typ + 'Priorytet' + self.priorytet + '\n'
@@ -41,8 +42,9 @@ class wizytowka(przedmiot):
         info += self.telefon + '\n'
         return info
 
+
 class kuponRabatowy(przedmiot):
-    def __init__(self,imie,nazwisko,telefon,wartosc, priorytet):
+    def __init__(self, imie, nazwisko, telefon, wartosc, priorytet):
         super().__init__('kuponrabatowy', priorytet)
         self.imie = imie
         self.nazwisko = nazwisko
